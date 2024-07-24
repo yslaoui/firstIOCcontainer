@@ -10,18 +10,20 @@ public class DemoController {
 
     Coach coach;
 
-    @Autowired
-    public DemoController(Coach coach) {
-        this.coach = coach;
-    }
+//    @Autowired
+//    public DemoController() {
+//
+//    }
 
     @GetMapping
     public String getCricketWorkout() {
         return this.coach.getDailyWorkout();
     }
 
-
-
+    @Autowired
+    public void setCoach(Coach coach) {
+        this.coach = coach;
+    }
 
 }
 
