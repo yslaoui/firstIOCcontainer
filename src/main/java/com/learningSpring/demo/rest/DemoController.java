@@ -15,7 +15,7 @@ public class DemoController {
     @Autowired
     public void setCoach( @Qualifier("tennisCoach") Coach coach,
                           @Qualifier("tennisCoach") Coach anotherCoach) {
-        System.out.println("Initializing constructor " + getClass().getSimpleName());
+        System.out.println("Calling constructor of " + getClass().getSimpleName());
         this.coach = coach;
         this.anotherCoach = anotherCoach;
     }

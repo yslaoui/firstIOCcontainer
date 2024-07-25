@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class CricketCoach implements Coach{
 
     public CricketCoach() {
-        System.out.println("Initializing class " + getClass().getSimpleName());
+        System.out.println("Calling Constructor of " + getClass().getSimpleName());
     }
 
     @Override
