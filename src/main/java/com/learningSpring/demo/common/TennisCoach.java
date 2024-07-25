@@ -20,18 +20,6 @@ public class TennisCoach implements Coach{
         return "Make 100 aces in a row";
     }
 
-    @PostConstruct
-    public void printWhenConstructed() {
-        System.out.println(" Bean Initialization method: " + getClass().getSimpleName());
-    }
-    @PreDestroy
-    public void printWhenDestroyed() {
-        System.out.println("Bean Destruction method: " + getClass().getSimpleName());
-    }
-
-
-
-
 
 }
 
