@@ -10,20 +10,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     Coach coach;
+    Coach anotherCoach;
 
-//    @Autowired
-//    public DemoController() {
-//
-//    }
-
+    @Autowired
+    public void setCoach( @Qualifier("tennisCoach") Coach coach,
+                          @Qualifier("tennisCoach") Coach anotherCoach) {
+        System.out.println("Initializing constructor " + getClass().getSimpleName());
+        this.coach = coach;
+        this.anotherCoach = anotherCoach;
+    }
     @GetMapping
     public String getCricketWorkout() {
         return this.coach.getDailyWorkout();
     }
 
-    @Autowired
-    public void setCoach( @Qualifier("tennisCoach") Coach coach) {
-        this.coach = coach;
+    @GetMapping("/check")
+    public String checkScope() {
+        return "scope is a singleton " + (this.coach == this.anotherCoach);
     }
 
 
